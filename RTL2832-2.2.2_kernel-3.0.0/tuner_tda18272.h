@@ -2862,7 +2862,7 @@ typedef struct _tmbslFrontEndDependency_t
     UInt32                      dwAdditionalDataSize;
     /** Device Parameters data pointer */
     void*                       pAdditionalData;
-} tmbslFrontEndDependency_t, *ptmbslFrontEndDependency_t;
+} __no_const tmbslFrontEndDependency_t, *ptmbslFrontEndDependency_t;
 
 /*============================================================================*/
 
@@ -3552,7 +3552,7 @@ extern "C"
         // Added by Realtek.
 		TUNER_MODULE                *pTuner;
 
-    } tmTDA182I2Object_t, *ptmTDA182I2Object_t, **pptmTDA182I2Object_t;
+    } __no_const tmTDA182I2Object_t, *ptmTDA182I2Object_t, **pptmTDA182I2Object_t;
 
 
 /* suppress warning about static */
@@ -7049,7 +7049,7 @@ extern "C"
         tmddTDA182I2PowerState_t    curPowerState;
         Bool                        bIRQWait;
         TDA182I2_I2C_Map_t          I2CMap;
-    } tmddTDA182I2Object_t, *ptmddTDA182I2Object_t, **pptmddTDA182I2Object_t;
+    } __no_const tmddTDA182I2Object_t, *ptmddTDA182I2Object_t, **pptmddTDA182I2Object_t;
 
 
     extern tmErrorCode_t ddTDA182I2GetIRQ_status(ptmddTDA182I2Object_t pObj, UInt8* puValue);

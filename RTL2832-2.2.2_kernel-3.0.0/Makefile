@@ -4,7 +4,7 @@
 # Choose here wich include file to use: from kernel 3.0.0 (good for 3.1.0) or from kernel 3.2.0
 
 # kernel 3.0.0 / 3.1.0
-INCLUDE_EXTRA_DVB := include-340
+INCLUDE_EXTRA_DVB := include-350
 
 # kernel 3.2.0
 #INCLUDE_EXTRA_DVB := include-320
@@ -27,6 +27,7 @@ dvb-usb-rtl2832u-objs := demod_rtl2832.o dvbt_demod_base.o dvbt_nim_base.o \
 	tuner_tda18272.o nim_rtl2832_tda18272.o rtl2832u_ioctl.o nim_rtl2832_fc0013.o \
 	tuner_fc0013.o
 
+
 obj-m += dvb-usb-rtl2832u.o
 
 EXTRA_CFLAGS += -I$(KBUILD_SRC)/drivers/media/dvb/dvb-usb/ \
@@ -37,7 +38,7 @@ EXTRA_CFLAGS += -I$(KBUILD_SRC)/drivers/media/dvb/dvb-usb/ \
 		-D__DVB_CORE__
 
 KINS = /lib/modules
-KDIR = /usr/src/kernels/$(KERNVER)
+KDIR = /usr/src/linux-$(KERNVER)
 
 default:
 	make -C $(KDIR) SUBDIRS=$(PWD) modules
